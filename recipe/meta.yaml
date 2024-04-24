@@ -1,5 +1,5 @@
 {% set name = "PyWinBox" %}
-{% set version = "0.6" %}
+{% set version = "0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Kalmat/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 092541e5a117f080310e279a9f1b231503eb3631d0e578c166f81db08d68547a
+  sha256: 5ac8f4cf46d423740e0afd72618b6f5a4a146f4480bc0863480e004b8ad06fff
 
 build:
   number: 0
@@ -25,6 +25,7 @@ requirements:
     - __win    # [win]
     - pywin32 >=302  # [win]
     - python-xlib >=0.21  # [linux]
+    - ewmhlib >=0.1  # [linux]
     - pyobjc-framework-cocoa >=8.1  # [osx]
     - typing_extensions >=4.4.0
 
