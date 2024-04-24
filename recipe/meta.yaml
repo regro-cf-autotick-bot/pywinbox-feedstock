@@ -25,6 +25,7 @@ requirements:
     - __win    # [win]
     - pywin32 >=302  # [win]
     - python-xlib >=0.21  # [linux]
+    - ewmhlib >=0.1  # [linux]
     - pyobjc-framework-cocoa >=8.1  # [osx]
     - typing_extensions >=4.4.0
 
