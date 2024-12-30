@@ -10,16 +10,16 @@ source:
   sha256: 5ac8f4cf46d423740e0afd72618b6f5a4a146f4480bc0863480e004b8ad06fff
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - __linux  # [linux]
     - __osx    # [osx]
     - __win    # [win]
@@ -30,6 +30,8 @@ requirements:
     - typing_extensions >=4.4.0
 
 test:
+  requires:
+    - python {{ python_min }}
   commands:
     - "DISPLAY=localhost:1.0 XDG_SESSION_TYPE=x11 xvfb-run -a python -c 'import pywinbox'"  # [linux]
   imports:
